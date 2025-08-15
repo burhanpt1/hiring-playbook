@@ -1,5 +1,5 @@
 {
-  "export_html": "input.html",
+  "export_html": "exports/input.html",
   "title": "Scale, Hire, Train, Fire",
   "version": "1.0.0"
 }
