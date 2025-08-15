@@ -3,65 +3,143 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scale, Hire, Train, Fire</title>
+  <title>Scale, Hire, Train, Fire - The Ultimate Startup Playbook</title>
+  <meta name="description" content="Build companies that scale without breaking. Master the four critical acts: Scale, Hire, Train, Fire.">
   <link rel="stylesheet" href="styles.css">
   <meta name="color-scheme" content="light dark">
 </head>
 <body>
-  <header class="site-header">
+  <div class="bg-animation"></div>
+  
+  <header class="site-header" id="header">
     <div class="site-brand">
-      <a href="index.html" class="brand-title">Scale, Hire, Train, Fire</a>
+      <a href="#" class="brand-title">Scale, Hire, Train, Fire</a>
     </div>
     <div class="site-tools">
-      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">⟲</button>
     </div>
   </header>
 
-  <section class="landing">
-    <div class="landing-inner">
-      <div class="landing-intro glass">
-        <h1>Prologue</h1>
-        <p>State the premise and how to use this playbook. Keep it to 3–5 sentences. Edit this block in <code>index.html</code>. Content pages are loaded unmodified from <code>/exports</code>.</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Scale, Hire, Train, Fire</h1>
+      <p class="hero-subtitle">The internal playbook for building teams that scale without breaking</p>
+    </div>
+  </section>
+
+  <section class="prologue">
+    <div class="prologue-inner">
+      <div class="prologue-content animate-on-scroll">
+        <h2>The Ultimate Playbook</h2>
+        <p>Hiring is a common theme in every board meeting. Every founder knows that the team is the main driver of success. <span class="highlight">Quality of the team is probably the biggest single predictor of company success</span> - far higher than the quality of the product, the amount of capital raised, or the genius of the founders.</p>
+        
+        <p>And this is a commonly known fact. Every founder is aware of this. And so every founder wants to get talent right. Almost none do. There'll always be mistakes made. And this isn't an accusation - every company in existence at some point has made mistakes in their hiring processes, ourselves included.</p>
+        
+        <p>There's a lot of great information online about how companies can handle talent better. But it's fragmented. Sometimes outdated. In many cases not relevant. And in some cases even contradictory.</p>
+        
+        <p>This book is about building companies that scale without breaking. Most founder failures in talent come down to one of four acts: <span class="highlight">scaling too slowly or sloppily, hiring the wrong people, failing to train and keep the right ones, and holding onto the wrong ones for too long</span>.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="landing-grid">
-        <a class="quad-card glass accent-scale" href="reader.html?section=scale">
-          <span class="label">SCALE</span>
-          <span class="summary">Systems, leverage, and compounding throughput.</span>
+  <section class="content-grid" id="content">
+    <div class="grid-inner">
+      <h2 class="grid-title animate-on-scroll">The Five Pillars</h2>
+      <p class="grid-subtitle animate-on-scroll">Four core capabilities plus founder self-awareness</p>
+      
+      <div class="cards-grid">
+        <a class="feature-card card-scale animate-on-scroll" href="reader.html?section=scale">
+          <div class="card-icon">📈</div>
+          <h3 class="card-title">SCALE</h3>
+          <p class="card-description">Build systems, leverage, and compounding throughput. Learn how to grow your team efficiently without losing quality or culture.</p>
         </a>
 
-        <a class="quad-card glass accent-hire" href="reader.html?section=hire">
-          <span class="label">HIRE</span>
-          <span class="summary">Pipelines, scorecards, trials, raising the bar.</span>
+        <a class="feature-card card-hire animate-on-scroll" href="reader.html?section=hire">
+          <div class="card-icon">🎯</div>
+          <h3 class="card-title">HIRE</h3>
+          <p class="card-description">Master pipelines, scorecards, trials, and raising the bar. Create a hiring machine that consistently delivers top talent.</p>
         </a>
 
-        <a class="quad-card glass accent-train" href="reader.html?section=train">
-          <span class="label">TRAIN</span>
-          <span class="summary">Onboarding, standards, feedback loops, reps.</span>
+        <a class="feature-card card-train animate-on-scroll" href="reader.html?section=train">
+          <div class="card-icon">🚀</div>
+          <h3 class="card-title">TRAIN</h3>
+          <p class="card-description">Perfect onboarding, standards, feedback loops, and reps. Turn good hires into exceptional performers through systematic development.</p>
         </a>
 
-        <a class="quad-card glass accent-fire" href="reader.html?section=fire">
-          <span class="label">FIRE</span>
-          <span class="summary">Hard calls, risk, recovery, integrity.</span>
+        <a class="feature-card card-fire animate-on-scroll" href="reader.html?section=fire">
+          <div class="card-icon">❌</div>
+          <h3 class="card-title">FIRE</h3>
+          <p class="card-description">Navigate hard calls, risk, recovery, and integrity. Make difficult decisions with confidence and maintain team trust.</p>
+        </a>
+
+        <a class="feature-card card-reflect animate-on-scroll" href="reader.html?section=reflect">
+          <div class="card-icon">🪞</div>
+          <h3 class="card-title">REFLECT</h3>
+          <p class="card-description">Self-assessment and founder awareness. Identify your own limitations and blind spots that could impact your team's success.</p>
         </a>
       </div>
     </div>
   </section>
 
   <footer class="site-footer">
-    <div class="foot-left"><a href="reader.html?section=references">References</a></div>
-    <div class="foot-right"><a href="reader.html?section=reflect">Reflect</a></div>
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-links">
+          <a href="reader.html?section=references">References</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
-    const key='playbook-theme';
-    const saved=localStorage.getItem(key); if(saved) document.documentElement.dataset.theme=saved;
-    document.getElementById('themeToggle').onclick=()=>{
-      const next=document.documentElement.dataset.theme==='light'?'dark':
-                  document.documentElement.dataset.theme==='dark'?'':'light';
-      document.documentElement.dataset.theme=next;
-      if(next) localStorage.setItem(key,next); else localStorage.removeItem(key);
+    // Theme is now fixed to dark mode - remove theme toggle functionality
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
     };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add stagger delay to grid items
+    document.querySelectorAll('.cards-grid .feature-card').forEach((card, index) => {
+      card.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+    });
   </script>
 </body>
 </html>
