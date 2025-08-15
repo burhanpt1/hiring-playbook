@@ -3,30 +3,99 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reader</title>
+  <title>Reader - Scale, Hire, Train, Fire</title>
+  <meta name="description" content="Internal playbook reader for building teams that scale without breaking">
   <link rel="stylesheet" href="styles.css">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="dark">
 </head>
 <body>
-  <header class="site-header">
-    <div class="site-brand"><a href="index.html" class="brand-title" id="brandTitle">Playbook</a></div>
+  <div class="bg-animation"></div>
+  
+  <header class="site-header" id="header">
+    <div class="site-brand">
+      <a href="index.html" class="brand-title" id="brandTitle">Scale, Hire, Train, Fire</a>
+    </div>
     <div class="site-tools">
-      <input id="docSearch" type="search" placeholder="Search…" aria-label="Search">
-      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">⟲</button>
+      <div class="search-container">
+        <input id="docSearch" type="search" placeholder="Search content..." aria-label="Search">
+        <span class="search-icon">🔍</span>
+      </div>
     </div>
   </header>
 
-  <div class="layout">
-    <aside class="sidebar"><nav id="toc" aria-label="Table of contents"></nav></aside>
-    <main id="contentWrap" class="content" tabindex="-1">
-      <div id="progressBar"></div>
-      <article id="doc" class="doc"></article>
+  <div class="reader-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3 class="sidebar-title">Contents</h3>
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+      <nav id="toc" aria-label="Table of contents" class="toc-nav"></nav>
+      <div class="sidebar-footer">
+        <div class="reading-progress">
+          <span class="progress-label">Reading Progress</span>
+          <div class="progress-circle">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+              <circle cx="20" cy="20" r="18" stroke="rgba(168, 61, 114, 0.2)" stroke-width="2" fill="none"/>
+              <circle id="progressCircle" cx="20" cy="20" r="18" stroke="var(--accent)" stroke-width="2" fill="none" 
+                      stroke-dasharray="113" stroke-dashoffset="113" stroke-linecap="round"/>
+            </svg>
+            <span id="progressPercent">0%</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main id="contentWrap" class="content-main" tabindex="-1">
+      <div class="content-header">
+        <div id="progressBar" class="progress-bar"></div>
+        <div class="breadcrumb" id="breadcrumb">
+          <a href="index.html" class="breadcrumb-link">Home</a>
+          <span class="breadcrumb-separator">→</span>
+          <span class="breadcrumb-current" id="currentSection">Loading...</span>
+        </div>
+      </div>
+      
+      <div class="doc-container">
+        <article id="doc" class="doc-content">
+          <div class="loading-state">
+            <div class="loading-spinner"></div>
+            <p>Loading content...</p>
+          </div>
+        </article>
+        
+        <nav class="doc-navigation" id="docNavigation" style="display: none;">
+          <a href="#" class="nav-link nav-prev" id="navPrev">
+            <span class="nav-arrow">←</span>
+            <div class="nav-content">
+              <span class="nav-label">Previous</span>
+              <span class="nav-title"></span>
+            </div>
+          </a>
+          <a href="#" class="nav-link nav-next" id="navNext">
+            <div class="nav-content">
+              <span class="nav-label">Next</span>
+              <span class="nav-title"></span>
+            </div>
+            <span class="nav-arrow">→</span>
+          </a>
+        </nav>
+      </div>
     </main>
   </div>
 
-  <footer class="site-footer">
-    <div class="foot-left"><a href="index.html">Home</a></div>
-    <div class="foot-right"><a id="downloadRaw" href="#" download>Download HTML</a> · <a id="viewRaw" href="#" target="_blank" rel="noopener">Open raw HTML</a></div>
+  <footer class="reader-footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <a href="index.html" class="footer-link">← Back to Home</a>
+      </div>
+      <div class="footer-right">
+        <a id="downloadRaw" href="#" download class="footer-link">Download HTML</a>
+        <span class="footer-separator">·</span>
+        <a id="viewRaw" href="#" target="_blank" rel="noopener" class="footer-link">View Raw</a>
+      </div>
+    </div>
   </footer>
 
   <script src="reader.js" defer></script>
