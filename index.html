@@ -3,45 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scale, Hire, Train, Reflect</title>
+  <title>Scale, Hire, Train, Fire</title>
   <link rel="stylesheet" href="styles.css">
   <meta name="color-scheme" content="light dark">
 </head>
 <body>
   <header class="site-header">
-    <div class="site-brand"><span class="brand-title">Scale, Hire, Train, Reflect</span></div>
-    <div class="site-tools"><button id="themeToggle" class="icon-btn" aria-label="Toggle theme">⟲</button></div>
+    <div class="site-brand">
+      <a href="index.html" class="brand-title">Scale, Hire, Train, Fire</a>
+    </div>
+    <div class="site-tools">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">⟲</button>
+    </div>
   </header>
 
   <section class="landing">
     <div class="landing-inner">
-      <div class="landing-intro">
-        <h1>Scale, Hire, Train, Reflect</h1>
-        <p>Choose a section. Exports remain unmodified; styling is applied by the site wrapper.</p>
+      <div class="landing-intro glass">
+        <h1>Prologue</h1>
+        <p>State the premise and how to use this playbook. Keep it to 3–5 sentences. Edit this block in <code>index.html</code>. Content pages are loaded unmodified from <code>/exports</code>.</p>
       </div>
+
       <div class="landing-grid">
-        <a class="quad-btn" href="reader.html?section=scale">SCALE</a>
-        <a class="quad-btn" href="reader.html?section=hire">HIRE</a>
-        <a class="quad-btn" href="reader.html?section=train">TRAIN</a>
-        <a class="quad-btn" href="reader.html?section=reflect">REFLECT</a>
-      </div>
-      <div style="margin-top:16px;text-align:right">
-        <a class="toc-link" href="reader.html?section=fire">Fire</a> ·
-        <a class="toc-link" href="reader.html?section=references">References</a>
+        <a class="quad-card glass accent-scale" href="reader.html?section=scale">
+          <span class="label">SCALE</span>
+          <span class="summary">Systems, leverage, and compounding throughput.</span>
+        </a>
+
+        <a class="quad-card glass accent-hire" href="reader.html?section=hire">
+          <span class="label">HIRE</span>
+          <span class="summary">Pipelines, scorecards, trials, raising the bar.</span>
+        </a>
+
+        <a class="quad-card glass accent-train" href="reader.html?section=train">
+          <span class="label">TRAIN</span>
+          <span class="summary">Onboarding, standards, feedback loops, reps.</span>
+        </a>
+
+        <a class="quad-card glass accent-fire" href="reader.html?section=fire">
+          <span class="label">FIRE</span>
+          <span class="summary">Hard calls, risk, recovery, integrity.</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <footer class="site-footer"><span>©</span></footer>
+  <footer class="site-footer">
+    <div class="foot-left"><a href="reader.html?section=references">References</a></div>
+    <div class="foot-right"><a href="reader.html?section=reflect">Reflect</a></div>
+  </footer>
 
   <script>
-    const storageKey='playbook-theme';
-    const saved=localStorage.getItem(storageKey); if(saved) document.documentElement.dataset.theme=saved;
+    const key='playbook-theme';
+    const saved=localStorage.getItem(key); if(saved) document.documentElement.dataset.theme=saved;
     document.getElementById('themeToggle').onclick=()=>{
       const next=document.documentElement.dataset.theme==='light'?'dark':
                   document.documentElement.dataset.theme==='dark'?'':'light';
       document.documentElement.dataset.theme=next;
-      if(next) localStorage.setItem(storageKey,next); else localStorage.removeItem(storageKey);
+      if(next) localStorage.setItem(key,next); else localStorage.removeItem(key);
     };
   </script>
 </body>

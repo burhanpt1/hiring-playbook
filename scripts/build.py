@@ -31,6 +31,12 @@ def main():
     exp_src = ROOT / target
     (DIST / "exports").mkdir(exist_ok=True)
     shutil.copy2(exp_src, DIST / target)
+
+    # copy sections data if present
+    DATA = ROOT / "data"
+    if DATA.exists():
+        shutil.copytree(DATA, DIST / "data", dirs_exist_ok=True)
+
     print("Built ./dist")
 
 if __name__ == "__main__":
