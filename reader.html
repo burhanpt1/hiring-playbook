@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reader</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="color-scheme" content="light dark">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-brand"><a href="index.html" class="brand-title" id="brandTitle">Playbook</a></div>
+    <div class="site-tools">
+      <input id="docSearch" type="search" placeholder="Search…" aria-label="Search">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">⟲</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar"><nav id="toc" aria-label="Table of contents"></nav></aside>
+    <main id="contentWrap" class="content" tabindex="-1">
+      <div id="progressBar"></div>
+      <article id="doc" class="doc"></article>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="foot-left"><a href="index.html">Home</a></div>
+    <div class="foot-right"><a id="downloadRaw" href="#" download>Download HTML</a> · <a id="viewRaw" href="#" target="_blank" rel="noopener">Open raw HTML</a></div>
+  </footer>
+
+  <script src="reader.js" defer></script>
+</body>
+</html>

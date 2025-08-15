@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>TRAIN</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="25059c70-168c-807d-bb1a-d94c67607ff4" class="page sans"><header><h1 class="page-title">TRAIN</h1><p class="page-description"></p></header><div class="page-body"><h1 id="25059c70-168c-8023-abc8-c6314ac31ff7" class=""><strong>7. Performance Management: Keeping the Bar High</strong></h1><p id="25059c70-168c-8083-bf90-c01b353fc215" class="">The quality of your people does not remain static after hiring. Without an intentional system for measuring and improving performance, talent density decays over time—especially during rapid scaling when onboarding quality is inconsistent and role expectations evolve.</p><p id="25059c70-168c-8098-af00-e384aeef7311" class="">A well-designed performance management system does three things:</p><ol type="1" id="25059c70-168c-80ba-998c-f457038b8a73" class="numbered-list" start="1"><li><strong>Sets a clear bar</strong> for what great looks like.</li></ol><ol type="1" id="25059c70-168c-8099-96a7-f301fbdd05f6" class="numbered-list" start="2"><li><strong>Measures against that bar</strong> in a consistent, bias-resistant way.</li></ol><ol type="1" id="25059c70-168c-8095-a2bc-e93541ebceeb" class="numbered-list" start="3"><li><strong>Takes decisive action</strong> based on the results—promotion, development, or exit.</li></ol><p id="25059c70-168c-80fc-b072-d5f3c1b56679" class="">Netflix’s Patty McCord puts it bluntly: “The real company values are shown by who gets rewarded, promoted, or let go” (<em>Powerful</em>, 2018).</p><hr id="25059c70-168c-801b-9b05-dea70b14c3af"/><h2 id="25059c70-168c-8042-8d55-e85629f5f9bf" class="">7.1 Talent Bars by Role &amp; Level</h2><p id="25059c70-168c-8095-bfa9-e26576b6ff3e" class="">QuantumLight’s framework defines performance on <strong>three independent axes</strong>:</p><ul id="25059c70-168c-80be-a78a-ec5bd4d1b4fa" class="bulleted-list"><li style="list-style-type:disc"><strong>Deliverables</strong> — measurable output against agreed objectives.</li></ul><ul id="25059c70-168c-80a3-8365-d2c9664313a4" class="bulleted-list"><li style="list-style-type:disc"><strong>Skills</strong> — functional competencies required for the role.</li></ul><ul id="25059c70-168c-801f-91e7-c22c604226e2" class="bulleted-list"><li style="list-style-type:disc"><strong>Culture</strong> — alignment with company values, measured as observable behaviors.</li></ul><p id="25059c70-168c-80e4-9757-e30591ce4ff0" class="">Each axis has a <strong>talent bar</strong>: a minimum acceptable level for that role and level. Someone meeting deliverables but failing on culture still fails; someone culturally strong but missing deliverables also fails.</p><p id="25059c70-168c-80a4-b11a-d745ec87b50f" class="">This tri-axis approach prevents the “competent jerk” problem (good output, bad culture) and the “lovable underperformer” problem (great culture, poor output).</p><p id="25059c70-168c-80c4-9734-e2ecf93b78b7" class=""><strong>Execution step:</strong> Create a bar definition for every role and level by Series A. Use role scorecards as the foundation, then explicitly define “meets,” “exceeds,” and “below” for each axis.</p><hr id="25059c70-168c-8095-96a9-e8bf6153ca47"/><h2 id="25059c70-168c-80d5-95a0-d1370bc4f809" class="">7.2 Goals and OKRs That Actually Drive Output</h2><p id="25059c70-168c-8082-ba8f-f3854e5c9a99" class="">John Doerr’s <em>Measure What Matters</em> popularized the <strong>OKR</strong> framework—Objectives (qualitative, inspiring) supported by 3–5 Key Results (quantitative, measurable). The best OKRs:</p><ul id="25059c70-168c-8092-b372-fa32dd5e994c" class="bulleted-list"><li style="list-style-type:disc">Align across levels—team OKRs ladder to company OKRs.</li></ul><ul id="25059c70-168c-8012-a65d-c1f2e2c74833" class="bulleted-list"><li style="list-style-type:disc">Are public—everyone can see everyone else’s OKRs.</li></ul><ul id="25059c70-168c-8093-8566-cd117b9f1630" class="bulleted-list"><li style="list-style-type:disc">Are stretch—targeting ~70% achievement to encourage ambition (Doerr, 2018).</li></ul><p id="25059c70-168c-80f7-8e35-d4480b76be44" class="">QuantumLight integrates OKRs directly into performance reviews, evaluating not just final results but <strong>how</strong> results were achieved—ensuring culture and skills are factored in alongside output.</p><p id="25059c70-168c-80d4-b4ec-eba0e40c602d" class=""><strong>Execution step:</strong> Implement OKRs only once you can commit to quarterly cycles with active review. Under-resourced OKRs create cynicism and “checkbox OKRs” with no link to actual work.</p><hr id="25059c70-168c-8063-a6c4-e261a0684b91"/><h2 id="25059c70-168c-8039-9835-d3eef36d5519" class="">7.3 Radical Candor &amp; Peer Feedback</h2><p id="25059c70-168c-808c-b8be-dd3e8b2197b2" class="">Netflix operationalizes feedback through the <strong>Keeper Test</strong> (“Would you fight to keep this person?”) and a culture of direct, frequent feedback. Patty McCord stresses: “Don’t wait for an annual review to tell someone they’re failing” (<em>Powerful</em>, 2018).</p><p id="25059c70-168c-802b-8bb3-c06d0db792d4" class="">Kim Scott’s “Radical Candor” framework provides a useful mental model:</p><ul id="25059c70-168c-8088-abf2-ff9e298013e3" class="bulleted-list"><li style="list-style-type:disc"><strong>Care personally, challenge directly</strong>.</li></ul><ul id="25059c70-168c-803e-bfcc-e9cd4c14665f" class="bulleted-list"><li style="list-style-type:disc">Avoid the “ruinous empathy” trap (avoiding hard truths to be nice) and the “obnoxious aggression” trap (harsh with no care).</li></ul><p id="25059c70-168c-8097-9dd9-e5f17f78a381" class="">Spotify implements <strong>peer feedback loops</strong> in addition to manager reviews—ensuring collaboration and cross-team impact are visible.</p><p id="25059c70-168c-801e-a31d-fb24a433b930" class=""><strong>Execution step:</strong> Train all managers in giving and receiving feedback. Make feedback a standing agenda item in 1:1s, not an annual surprise.</p><hr id="25059c70-168c-8002-a862-e989642a81ec"/><h2 id="25059c70-168c-8053-a7f9-f409fedda07a" class="">7.4 Calibrating &amp; Differentiating Performance</h2><p id="25059c70-168c-80fd-bdb8-c7aaac379dbd" class="">Calibration is where fairness and consistency are won or lost. Netflix managers meet to discuss team members against the talent bar, compare evidence, and resolve rating inflation.</p><p id="25059c70-168c-8021-951c-e22ccde9de7a" class="">QuantumLight recommends “forced differentiation” in early scaling phases:</p><ul id="25059c70-168c-8048-a31e-f489b540ec1c" class="bulleted-list"><li style="list-style-type:disc">Top 15–25% = “A players” — stretch assignments, retention focus.</li></ul><ul id="25059c70-168c-80e4-ab1a-ee55c738b729" class="bulleted-list"><li style="list-style-type:disc">50–60% = “Solid contributors” — maintain, coach for growth.</li></ul><ul id="25059c70-168c-80d5-9e9f-f47427204502" class="bulleted-list"><li style="list-style-type:disc">Bottom 15–25% = “Exit or redeploy” — short, documented timelines.</li></ul><p id="25059c70-168c-8031-8df6-c825351d86be" class="">Without differentiation, everyone is rated “above average” until the average drops and mediocrity becomes the norm.</p><p id="25059c70-168c-8041-a16f-d304cd8986de" class=""><strong>Execution step:</strong> Run calibration sessions quarterly. Founders should sit in on the top and bottom quartile discussions to keep the bar honest.</p><hr id="25059c70-168c-80d2-86dc-e66fb9d50b1e"/><p id="25059c70-168c-801b-be7c-c3e02588df99" class=""><strong>Key Failure Patterns:</strong></p><ul id="25059c70-168c-8095-a5be-e35b064a8ec7" class="bulleted-list"><li style="list-style-type:disc">Using only output metrics—ignoring how results were achieved.</li></ul><ul id="25059c70-168c-802c-a997-c904e0c6ca77" class="bulleted-list"><li style="list-style-type:disc">Overweighting culture fit—keeping underperformers because they’re “good for morale.”</li></ul><ul id="25059c70-168c-80e6-bfbb-d0be0f3c272f" class="bulleted-list"><li style="list-style-type:disc">Avoiding differentiation to dodge hard conversations.</li></ul><ul id="25059c70-168c-80d7-8b88-e4160fa64a18" class="bulleted-list"><li style="list-style-type:disc">Delaying exits for months, eroding trust in leadership.</li></ul><hr id="25059c70-168c-80bc-b673-ee8615111b0c"/><h1 id="25059c70-168c-80c2-bc59-c0c56d97462b" class=""><strong>8. Retention &amp; Development: Growing Leaders from Within</strong></h1><p id="25059c70-168c-8089-bb82-f70da50513c3" class="">High growth makes retention harder, not easier. The faster you scale, the more tempting it is for your best people to be lured away — either by the promise of greener pastures or by feeling that they’ve outgrown their role.</p><p id="25059c70-168c-8054-897c-e911c2c65139" class="">Top-quartile startups treat retention as a <strong>proactive system</strong>, not a reactive firefight when resignation letters arrive. That system combines clear career progression, stage-appropriate development investment, deliberate internal mobility, and early detection of disengagement.</p><hr id="25059c70-168c-8010-9c05-c0cdef90659d"/><h2 id="25059c70-168c-8000-bbf2-f075d27c160c" class="">8.1 Career Ladders Without Title Inflation</h2><p id="25059c70-168c-8013-a875-de18ba92c6b0" class="">Career ladders give employees visibility into <strong>what it takes to progress</strong>. Without them, you risk losing top performers to vague promises (“we’ll figure something out for you”) or inflating titles prematurely to keep them.</p><p id="25059c70-168c-80d0-a8b6-fa0b16fd4fd4" class="">QuantumLight recommends a <strong>two-track ladder</strong> for most functions:</p><ul id="25059c70-168c-80db-8a63-cd28623f7927" class="bulleted-list"><li style="list-style-type:disc"><strong>Individual Contributor (IC) Track</strong> — mastery and scope of influence grow without moving into management.</li></ul><ul id="25059c70-168c-80b6-87e4-ddc4a4507acb" class="bulleted-list"><li style="list-style-type:disc"><strong>Management Track</strong> — scope of team and strategic decision-making increases.</li></ul><p id="25059c70-168c-809a-97ed-dbe9835c1544" class="">Promotion requires sustained performance at the next level for at least two review cycles, not just tenure. Index Ventures warns that <strong>title inflation</strong> in early growth makes it impossible to hire true senior talent later without demoting incumbents (Index Ventures, <em>Scaling Through Chaos</em>, 2023).</p><p id="25059c70-168c-808d-b88b-f163e14861f4" class=""><strong>Execution step:</strong> By ~30 employees, draft functional career ladders with clear scope and competency expectations per level. Make them visible in your internal handbook.</p><hr id="25059c70-168c-80e8-bf4a-ffac34d8d2ec"/><h2 id="25059c70-168c-801c-9cdf-ea5dd90d1c69" class="">8.2 Stage-Appropriate Development Investment</h2><p id="25059c70-168c-805d-8c86-dc3422f1300f" class="">Your L&amp;D (learning and development) approach should evolve with scale:</p><p id="25059c70-168c-804b-a70d-df204ed5fbe4" class=""><strong>Seed to Series A:</strong></p><ul id="25059c70-168c-8080-aac8-c41aafd956c6" class="bulleted-list"><li style="list-style-type:disc">Development is informal — mentorship, founder shadowing, stretch assignments.</li></ul><ul id="25059c70-168c-8042-933f-ef306fea7047" class="bulleted-list"><li style="list-style-type:disc">Invest in peer learning (e.g., lunch-and-learns) rather than formal courses.</li></ul><p id="25059c70-168c-8074-8308-c40105fe7206" class=""><strong>Series B (~50+ employees):</strong></p><ul id="25059c70-168c-80fa-b5c3-c2a3bdc1f268" class="bulleted-list"><li style="list-style-type:disc">Introduce structured management training for new managers.</li></ul><ul id="25059c70-168c-80e8-89d5-f1b380b0cc97" class="bulleted-list"><li style="list-style-type:disc">Offer role-specific external courses for IC skill growth.</li></ul><p id="25059c70-168c-8029-be8f-c0ddb7e334bf" class=""><strong>Series C and beyond:</strong></p><ul id="25059c70-168c-807e-8545-d4c8ddc7c4ab" class="bulleted-list"><li style="list-style-type:disc">Dedicated L&amp;D budget per employee (often $1–2k/year in top quartile).</li></ul><ul id="25059c70-168c-8051-8431-dd1a187e7604" class="bulleted-list"><li style="list-style-type:disc">Executive coaching for senior leadership.</li></ul><p id="25059c70-168c-80af-82a0-c41fb1bfe498" class="">Spotify maintains a “70-20-10” model: 70% learning on the job, 20% from peers/managers, 10% from formal programs. This prevents over-investing in training disconnected from real work (Spotify HR Manifesto, 2019).</p><p id="25059c70-168c-8097-b059-fb7d98a864ae" class=""><strong>Execution step:</strong> Allocate a fixed % of payroll (0.5–1%) to L&amp;D by Series B. Track usage and link it to promotion and retention outcomes.</p><hr id="25059c70-168c-80ed-9966-e17d8e9a48c7"/><h2 id="25059c70-168c-8043-8bd9-d961110b1f0a" class="">8.3 Internal Mobility vs. External Hires</h2><p id="25059c70-168c-80be-ad9f-d1b677e409c9" class="">Promoting from within strengthens culture and loyalty. However, internal mobility only works if role expectations are clear and candidates are given transitional support.</p><p id="25059c70-168c-80b8-b4eb-f77de2a3f0a4" class="">Netflix promotes aggressively when someone proves they can operate at the next level, even if they lack years of experience in that title. This requires confidence in performance data and cultural fit (Hastings, <em>No Rules Rules</em>, 2020).</p><p id="25059c70-168c-8094-8cd4-cca0c93d51aa" class="">QuantumLight warns against “default internal hires” — moving someone into a role without competition because they’re available. This is often just a way to avoid hard external searches and can create role misfits.</p><p id="25059c70-168c-803d-bfae-de4fc9b788f3" class=""><strong>Execution step:</strong> For every senior role, run at least a <strong>dual-path search</strong>: consider top internal candidates alongside an external benchmark pool.</p><hr id="25059c70-168c-8045-a4cc-f64f48d5e77e"/><h2 id="25059c70-168c-80f3-83d8-e4c5cf3a8735" class="">8.4 Retention Risk Indicators</h2><p id="25059c70-168c-80bd-b3d8-da57dcdfa8f1" class="">Early detection is the only real advantage you have in preventing regrettable attrition. Retention risk rarely shows up as “I’m unhappy” — it’s visible first in behavior.</p><p id="25059c70-168c-800a-be48-d3b17d0c33c8" class="">QuantumLight tracks four leading indicators:</p><ol type="1" id="25059c70-168c-8047-aca3-e98c59301f58" class="numbered-list" start="1"><li><strong>Engagement drop</strong> — decreased participation in discussions, fewer questions, less visible enthusiasm.</li></ol><ol type="1" id="25059c70-168c-8071-9061-c22f846f1743" class="numbered-list" start="2"><li><strong>Output decay</strong> — quality or volume of work dips without clear external cause.</li></ol><ol type="1" id="25059c70-168c-807c-ad0e-cfedbeee10a4" class="numbered-list" start="3"><li><strong>Interpersonal withdrawal</strong> — fewer informal interactions, avoiding cross-team projects.</li></ol><ol type="1" id="25059c70-168c-80f9-8b05-c5eb1e205e94" class="numbered-list" start="4"><li><strong>Atypical calendar activity</strong> — more frequent short personal calls during work hours (a sign of interviewing).</li></ol><p id="25059c70-168c-80fe-b400-d52b3a654dcd" class="">Index Ventures recommends <strong>quarterly skip-level check-ins</strong> for high performers — founders meet them directly to sense-check engagement.</p><p id="25059c70-168c-8068-abfc-eb498dfc36f8" class=""><strong>Execution step:</strong> Implement a lightweight engagement pulse survey quarterly, but supplement with human observation from managers and peers.</p><hr id="25059c70-168c-80b5-94a0-ce6971088057"/><h2 id="25059c70-168c-804f-a879-f8463cbb6b25" class=""><strong>8.5 Post-Hire Integration for Executives</strong></h2><p id="25059c70-168c-80c2-b384-c2772ee88d8a" class="">Hiring a senior leader is only 50% of the job — integration is the other half. Most failed exec hires don’t fail because of skill; they fail because of misalignment, isolation, or unclear decision rights.</p><p id="25059c70-168c-800a-997a-e07f44c0cd3f" class=""><strong>1. Role Clarity and Decision Rights</strong></p><p id="25059c70-168c-8073-b56b-d931cdc687f1" class="">Document the exec’s remit, their direct reports, budget authority, and areas where the founder/board retains approval. Misaligned expectations in the first month are the most common cause of exec churn.</p><p id="25059c70-168c-8052-abd7-e0bd13a321ae" class=""><strong>2. Stakeholder Mapping</strong></p><p id="25059c70-168c-8027-9a5e-d8fe81e9eea1" class="">Within 30 days, the new exec should have met every direct report, key peer, and top 10 external stakeholders (customers, partners, investors).</p><p id="25059c70-168c-80ea-b0df-cb341852d65d" class=""><strong>3. Early Wins</strong></p><p id="25059c70-168c-805d-a0e8-d40ced1ce3ba" class="">Plan visible, achievable wins in the first 90 days to build credibility. Avoid assigning only “fix this broken mess” projects — pair quick wins with deep challenges.</p><p id="25059c70-168c-8023-a625-e7173d76213b" class=""><strong>4. Feedback Cadence</strong></p><p id="25059c70-168c-8085-af57-f803b94e9275" class="">Founder–exec 1:1 weekly for the first quarter, biweekly after. Feedback both ways — founder behavior is often the friction point.</p><p id="25059c70-168c-80c0-ab50-e61c8123c2bb" class=""><strong>Execution Step:</strong> Assign a board member or seasoned operator as informal coach for the first 6 months. Track integration progress explicitly in board updates.</p><hr id="25059c70-168c-80dc-8801-f455d4ce2bd8"/><p id="25059c70-168c-805b-9aa7-c69629cfde92" class=""><strong>Key Failure Patterns:</strong></p><ul id="25059c70-168c-80ad-b76d-e01f9614cca3" class="bulleted-list"><li style="list-style-type:disc">Confusing retention with perks (free lunch doesn’t fix career stagnation).</li></ul><ul id="25059c70-168c-80b9-93ab-dec6b7c05efb" class="bulleted-list"><li style="list-style-type:disc">Over-promoting to keep people without the scope or skill readiness.</li></ul><ul id="25059c70-168c-8090-ba03-cab896b48d84" class="bulleted-list"><li style="list-style-type:disc">Ignoring disengagement until it’s verbalized — at which point it’s usually too late.</li></ul><ul id="25059c70-168c-80f1-9800-f4a4d87b1f5c" class="bulleted-list"><li style="list-style-type:disc">Treating internal mobility as “plugging holes” instead of career growth.</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

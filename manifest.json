@@ -1,5 +1,11 @@
 {
-  "export_html": "exports/input.html",
-  "title": "Scale, Hire, Train, Fire",
-  "version": "1.0.0"
+  "title": "Scale, Hire, Train, Reflect",
+  "sections": {
+    "scale": "exports/SCALE 25059c70168c80abb71edd08615f7eb3.html",
+    "hire": "exports/HIRE 25059c70168c805798eae1c39f416cd4.html",
+    "train": "exports/TRAIN 25059c70168c807dbb1ad94c67607ff4.html",
+    "reflect": "exports/REFLECT 25059c70168c80f58431f2e11463356b.html",
+    "fire": "exports/FIRE 25059c70168c80aeae99e33ecdf3a294.html",
+    "references": "exports/References 25059c70168c8009811dcbc2bde7a1a9.html"
+  }
 }

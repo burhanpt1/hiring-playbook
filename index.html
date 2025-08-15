@@ -3,53 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Playbook</title>
+  <title>Scale, Hire, Train, Reflect</title>
   <link rel="stylesheet" href="styles.css">
   <meta name="color-scheme" content="light dark">
 </head>
 <body>
   <header class="site-header">
-    <div class="site-brand">
-      <span class="brand-title" id="brandTitle">Playbook</span>
-    </div>
-    <div class="site-tools">
-      <input id="docSearch" type="search" placeholder="Search…" aria-label="Search the playbook">
-      <button id="themeToggle" class="icon-btn" title="Toggle theme" aria-label="Toggle theme">⟲</button>
-    </div>
+    <div class="site-brand"><span class="brand-title">Scale, Hire, Train, Reflect</span></div>
+    <div class="site-tools"><button id="themeToggle" class="icon-btn" aria-label="Toggle theme">⟲</button></div>
   </header>
 
-  <!-- Landing page -->
-  <section id="landing" class="landing" hidden>
+  <section class="landing">
     <div class="landing-inner">
-      <div class="landing-intro" id="landingIntro">
+      <div class="landing-intro">
         <h1>Scale, Hire, Train, Reflect</h1>
-        <p>Edit this intro in <code>index.html</code>. The four buttons route to the corresponding sections parsed from your export’s <code>&lt;h1&gt;</code> headings.</p>
+        <p>Choose a section. Exports remain unmodified; styling is applied by the site wrapper.</p>
       </div>
-      <div class="landing-grid" id="landingGrid"></div>
+      <div class="landing-grid">
+        <a class="quad-btn" href="reader.html?section=scale">SCALE</a>
+        <a class="quad-btn" href="reader.html?section=hire">HIRE</a>
+        <a class="quad-btn" href="reader.html?section=train">TRAIN</a>
+        <a class="quad-btn" href="reader.html?section=reflect">REFLECT</a>
+      </div>
+      <div style="margin-top:16px;text-align:right">
+        <a class="toc-link" href="reader.html?section=fire">Fire</a> ·
+        <a class="toc-link" href="reader.html?section=references">References</a>
+      </div>
     </div>
   </section>
 
-  <!-- Reader layout -->
-  <div class="layout" id="readerLayout" hidden>
-    <aside class="sidebar">
-      <nav id="toc" aria-label="Table of contents"></nav>
-    </aside>
-    <main id="contentWrap" class="content" tabindex="-1">
-      <div id="progressBar" role="progressbar" aria-label="Scroll progress"></div>
-      <article id="doc" class="doc"></article>
-    </main>
-  </div>
+  <footer class="site-footer"><span>©</span></footer>
 
-  <footer class="site-footer">
-    <div class="foot-left">
-      <span id="footerTitle">Playbook</span>
-    </div>
-    <div class="foot-right">
-      <a id="downloadRaw" href="#" download>Download HTML</a>
-      <a id="viewRaw" href="#" target="_blank" rel="noopener">Open raw HTML</a>
-    </div>
-  </footer>
-
-  <script src="main.js" defer></script>
+  <script>
+    const storageKey='playbook-theme';
+    const saved=localStorage.getItem(storageKey); if(saved) document.documentElement.dataset.theme=saved;
+    document.getElementById('themeToggle').onclick=()=>{
+      const next=document.documentElement.dataset.theme==='light'?'dark':
+                  document.documentElement.dataset.theme==='dark'?'':'light';
+      document.documentElement.dataset.theme=next;
+      if(next) localStorage.setItem(storageKey,next); else localStorage.removeItem(storageKey);
+    };
+  </script>
 </body>
 </html>

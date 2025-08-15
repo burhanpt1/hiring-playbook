@@ -1,0 +1,680 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>HIRE</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="25059c70-168c-8057-98ea-e1c39f416cd4" class="page sans"><header><h1 class="page-title">HIRE</h1><p class="page-description"></p></header><div class="page-body"><p id="25059c70-168c-806d-8a35-da028b89925c" class="">We’ve spoken about how and when to scale. As complex as it seems, it pales in comparison to this topic. Hiring is everything. Poor talent will kill your company faster than your competitors ever could. Keeping your company free from poor talent requires a few things: </p><ol type="1" id="25059c70-168c-80b5-bc99-d38ef1c46cb2" class="numbered-list" start="1"><li>hiring the best people; </li></ol><ol type="1" id="25059c70-168c-800d-80e3-dccf9b948e7b" class="numbered-list" start="2"><li>making sure they meet the continuously rising bar; and</li></ol><ol type="1" id="25059c70-168c-80ea-aba5-ddd72bd1c844" class="numbered-list" start="3"><li>firing those who either slipped through the filter or got worse over time. </li></ol><p id="25059c70-168c-80ad-ad68-c56ac3889c04" class="">Let’s talk about hiring the best people. It’s a very simple concept, but harder than you’d think to nail it. </p><p id="25059c70-168c-8005-b7c9-dec3f11824f7" class="">We break it down into the following steps: </p><ul id="25059c70-168c-803d-9cdc-dd6e45207dfc" class="bulleted-list"><li style="list-style-type:disc">define what you’re looking for,</li></ul><ul id="25059c70-168c-808f-9c7e-e793263c1965" class="bulleted-list"><li style="list-style-type:disc">source the best possible candidates, </li></ul><ul id="25059c70-168c-8071-a703-cc932508d194" class="bulleted-list"><li style="list-style-type:disc">figure out who’s exceptional, and</li></ul><ul id="25059c70-168c-8053-8b7d-cf6bc0861866" class="bulleted-list"><li style="list-style-type:disc">get them to work for you. </li></ul><p id="25059c70-168c-803e-a0fb-f45519c6500a" class="">The first step <strong>can be </strong>optional in some cases. If you’re under 10 employees and all generalists, you need less rigour that a team of 50 hiring another specialist. But, we’d recommend thinking about this even at earlier stages - it instils the spirit of discipline that you need. </p><hr id="25059c70-168c-8015-bdd2-c2710cd194ba"/><h2 id="25059c70-168c-801b-8230-ef62cfdaf4ac" class="">5.1 Define Roles by Outcomes, Not Tasks</h2><p id="25059c70-168c-8095-8db6-e6a4a94ef966" class="">A “job description” is almost always the wrong tool for early-stage hiring. Listing tasks (“manage CRM, run demos, update pitch decks”) creates a <strong>checkbox mentality</strong>—you’ll hire someone who can do the tasks but not necessarily deliver the outcomes.</p><p id="25059c70-168c-8056-afa1-dde4a09894e2" class="">Instead, write <strong>role scorecards</strong> (Geoff Smart &amp; Randy Street, <em>Who</em>, 2008). A scorecard defines:</p><ul id="25059c70-168c-804b-b89f-ed1480374254" class="bulleted-list"><li style="list-style-type:disc"><strong>Mission</strong> — Why the role exists.</li></ul><ul id="25059c70-168c-8091-919c-c49fcca211b4" class="bulleted-list"><li style="list-style-type:disc"><strong>Outcomes</strong> — 3–5 measurable results that define success in the first 12–18 months.</li></ul><ul id="25059c70-168c-8075-9fb7-cf85b865f9fa" class="bulleted-list"><li style="list-style-type:disc"><strong>Competencies</strong> — The skills and behaviors required to achieve those outcomes.</li></ul><p id="25059c70-168c-8027-a38e-cc7e14f1a884" class="">Netflix takes this further by <strong>casting for the role, not the resume</strong>: “We look for people who thrive in our context, not just those with the right skills” (Netflix Culture Deck, 2009).</p><p id="25059c70-168c-802d-8e6f-f0226fe98247" class=""><strong>Execution step:</strong> Every open role gets a scorecard, reviewed by the founder or functional head before sourcing begins. Interview questions should be designed to test for each outcome and competency.</p><hr id="25059c70-168c-8019-91fa-d92d9b7ba2eb"/><h2 id="25059c70-168c-8040-88c1-e634958b7f77" class="">Sourcing the best possible talent</h2><p id="25059c70-168c-80aa-91af-d5ca553e3d61" class="">Your sourcing strategy will change over time. The bigger you get, the more formalised it becomes. But, this is still the key to winning the fight for the best talent. </p><p id="25059c70-168c-809a-aa23-ef661b47d3b9" class=""><strong>Early days (0-15 FTEs):</strong></p><p id="25059c70-168c-8022-b60d-eca5bb1677d6" class="">Your network is king. People you’ve worked with in the past, or people who you know and trust. Most of your early hires will come from network. </p><p id="25059c70-168c-8016-9e37-dbea1681102e" class="">Use PR to your advantage. Fundraising announcements, an engaged community, (some) media appearances can be great to get people excited about the vision and reach out to you. </p><p id="25059c70-168c-8027-824a-c0af3189d093" class="">Be open minded too. The occasional coffee-chat can pay off. </p><p id="25059c70-168c-80ed-a578-c7fc077f3546" class=""><strong>15–40 employees:</strong></p><ul id="25059c70-168c-80a9-9966-f64002ec58c9" class="bulleted-list"><li style="list-style-type:disc">Layer in outbound sourcing via LinkedIn, niche communities, and alumni networks.</li></ul><ul id="25059c70-168c-80c4-9fa1-dd3d2673cb36" class="bulleted-list"><li style="list-style-type:disc">Dedicated recruiter starts building outbound lists.</li></ul><ul id="25059c70-168c-80ac-9def-e4369de96f28" class="bulleted-list"><li style="list-style-type:disc">Job posts on targeted platforms (avoid “spray and pray”).</li></ul><p id="25059c70-168c-8031-9a12-d669d068e167" class=""><strong>40–100 employees:</strong></p><ul id="25059c70-168c-80e4-a88d-ed90d4c28cf7" class="bulleted-list"><li style="list-style-type:disc">Employer brand investments: content, event sponsorships, conference presence.</li></ul><ul id="25059c70-168c-80d6-92b0-d8372c901d35" class="bulleted-list"><li style="list-style-type:disc">Structured referral programs with payouts.</li></ul><ul id="25059c70-168c-804a-98c7-da0e3ec7a4cf" class="bulleted-list"><li style="list-style-type:disc">Dedicated sourcers feeding recruiters.</li></ul><p id="25059c70-168c-807b-864e-f6abc09121f1" class="">QuantumLight stresses tracking <strong>sourcing yield</strong>: the % of hires by channel, time-to-fill per channel, and post-hire performance by source. Founders should know which channels produce top performers and double down on them.</p><p id="25059c70-168c-80a3-8e27-ddaf0c1d92fb" class=""><strong>Execution step:</strong> Review sourcing yield quarterly; kill channels that aren’t producing quality hires.</p><hr id="25059c70-168c-80b9-b169-ed0ef380da65"/><h2 id="25059c70-168c-8049-a36c-f90088369ee7" class="">5.3 Structured, Bias-Resistant Interviews</h2><p id="25059c70-168c-80dd-a87a-d5f9fba3956e" class="">Unstructured interviews are 56% less predictive of job success than structured ones (Schmidt &amp; Hunter, 1998). Yet most startups wing it.</p><p id="25059c70-168c-8033-af49-e1d80f5f0ddd" class="">A robust early-stage interview loop:</p><ol type="1" id="25059c70-168c-8001-aa0b-fe02dc448f83" class="numbered-list" start="1"><li><strong>Recruiter Screen</strong> — Assess basic fit and motivation.</li></ol><ol type="1" id="25059c70-168c-8055-b3ab-c08c8bbfee60" class="numbered-list" start="2"><li><strong>Hiring Manager Interview</strong> — Deep dive on competencies tied to outcomes.</li></ol><ol type="1" id="25059c70-168c-8087-8ae2-f93f52a13eb1" class="numbered-list" start="3"><li><strong>Panel / Peer Interviews</strong> — Cross-functional perspectives; each interviewer owns specific competencies.</li></ol><ol type="1" id="25059c70-168c-806d-8deb-c3df511a805a" class="numbered-list" start="4"><li><strong>Founder / Executive Interview</strong> — Cultural alignment and long-term vision.</li></ol><ol type="1" id="25059c70-168c-80b0-b5d8-cb292b1f2abc" class="numbered-list" start="5"><li><strong>Reference Checks</strong> — Structured, behavior-based questions (“Tell me about a time they handled X”).</li></ol><p id="25059c70-168c-80a4-91e4-cda630c5c254" class="">Netflix and QuantumLight both stress the importance of <strong>calibration sessions</strong>: interviewers meet immediately after the loop to share evidence and decide, rather than sending unstructured feedback asynchronously.</p><p id="25059c70-168c-8048-9b76-f5ac584b8a67" class=""><strong>Execution step:</strong> Assign each interviewer 2–3 specific scorecard competencies. No interviewer should “wing it” or duplicate another’s focus area.</p><hr id="25059c70-168c-80da-825c-f38455a2406f"/><h2 id="25059c70-168c-80b1-af11-f89851ee5bf2" class="">5.4 Candidate Closing in Competitive Markets</h2><p id="25059c70-168c-80d1-ba3f-c84284189a18" class="">Top candidates are rarely deciding between you and unemployment—they’re choosing between you and another compelling offer.</p><p id="25059c70-168c-8073-ab18-f5f3ea7d7288" class="">Patty McCord (Netflix) advises founders to personally close critical hires, even if they’re not directly managing them: “You’re not just selling a job; you’re selling a story they can tell themselves about their future” (<em>Powerful</em>, 2018).</p><p id="25059c70-168c-808a-adbe-c37981ae4daf" class="">Tactics for closing:</p><ul id="25059c70-168c-80a7-aaaa-fba167239f9b" class="bulleted-list"><li style="list-style-type:disc"><strong>Transparent compensation philosophy</strong> — Share ranges and rationale upfront.</li></ul><ul id="25059c70-168c-80d0-a80d-d8eab8c67910" class="bulleted-list"><li style="list-style-type:disc"><strong>Founder access</strong> — 1:1 conversation to answer “why now?” and “why us?”.</li></ul><ul id="25059c70-168c-8003-a674-e0fd8cbfac81" class="bulleted-list"><li style="list-style-type:disc"><strong>Vision immersion</strong> — Let them meet future peers and see the actual work environment.</li></ul><ul id="25059c70-168c-80ce-92b1-f0a5a063d81e" class="bulleted-list"><li style="list-style-type:disc"><strong>Speed</strong> — Time kills deals; 7–10 days from first interview to offer is a competitive advantage.</li></ul><p id="25059c70-168c-8092-bee9-ded28c03c768" class="">QuantumLight’s data shows that offer-accept rates drop by 50% if the process extends beyond 21 days without strong engagement.</p><p id="25059c70-168c-80af-ad0d-ef72f2d12868" class=""><strong>Execution step:</strong> Track your “time to close” metric from first interview to signed offer. Founders should intervene personally in every competitive close.</p><hr id="25059c70-168c-8021-bbe6-fdf871171238"/><h2 id="25059c70-168c-803f-87fb-fd65a395fdde" class=""><strong>5.5 Compensation Philosophy: Setting the Bar and Keeping It Honest</strong></h2><p id="25059c70-168c-80ac-8cb8-c2bd25447ae8" class="">Compensation decisions compound. If you set them reactively, you’ll end up with inequity, morale drag, and recruiting friction. Decide your philosophy early, publish it internally, and stick to it.</p><p id="25059c70-168c-80fe-b25f-e3575dabcc69" class=""><strong>1. Choose a Comp Philosophy Early</strong></p><p id="25059c70-168c-8083-b5ed-e629779a2390" class="">Pick your position in the market: median (50th percentile), strong (65th–75th), or top quartile (90th). Andy Grove warned that comp strategy is a cultural signal: under-market pay will repel top talent no matter the “mission.” Decide on your cash/equity mix — high-density talent philosophies (Netflix, 2009) demand higher equity percentages and cash at or above market.</p><p id="25059c70-168c-801d-967c-ddfc29e49dab" class=""><strong>2. Role &amp; Level Banding</strong></p><p id="25059c70-168c-8012-9fa8-fc73ab837f30" class="">Tie directly to your role scorecards. Each level should have a salary range and an equity range. Avoid “title-based” comp — bands should be scope-driven. Publish 3–4 sample bands internally.</p><p id="25059c70-168c-80de-9bb7-deafb598fc5a" class=""><strong>3. Equity Refreshers</strong></p><p id="25059c70-168c-800c-a265-da7331cc8e3a" class="">Equity-only comp loses retention power after 3–4 years without refreshers. Laszlo Bock (Work Rules!, 2015) notes Google refreshes annually for top quartile performers. For startups, plan refreshes at 2–3 year intervals tied to performance reviews.</p><p id="25059c70-168c-80cc-8cb7-f817eda6b50c" class=""><strong>4. Geographic Adjustments</strong></p><p id="25059c70-168c-80d9-acae-c1029f634181" class="">For remote teams, choose between full localization (match local market rates), partial localization (reduce from HQ rate by fixed %), or full HQ rate globally. Each choice sends a strong cultural signal. Stripe initially paid full SF rates globally to simplify and win senior talent in secondary markets.</p><p id="25059c70-168c-8084-8534-ef2b3edd1592" class=""><strong>5. Transparency Level</strong></p><p id="25059c70-168c-80d1-9079-d6695424835b" class="">Full transparency works if you have disciplined bands and a rational philosophy. Partial transparency creates politics. Pick one and commit.</p><p id="25059c70-168c-80fa-aac7-d91f7ec988ba" class=""><strong>Execution Step:</strong> By 20 employees, document your comp philosophy, publish it internally, and review annually. Every offer must match the philosophy — no “one-off” exceptions without explicit founder sign-off.</p><hr id="25059c70-168c-80ae-8a30-dfc001c1e347"/><h2 id="25059c70-168c-80b9-8d2d-cf6e9489597e" class=""><strong>5.6 Executive Hiring: How to Avoid the $500K Mis-hire</strong></h2><p id="25059c70-168c-808a-90ee-c9a1c470284e" class="">Executive hires are the highest-variance bets you’ll make. When they hit, they accelerate the company 2–3 years. When they miss, they cost years, millions, and team trust.</p><p id="25059c70-168c-8063-a3d4-fa3b9743a2f4" class=""><strong>1. Different Funnel, Different Due Diligence</strong></p><p id="25059c70-168c-805f-ae82-e625bb9511cf" class="">Exec candidates rarely come from job postings. Keith Rabois advises founders to personally target the top 10 people they’d want in the world, then use 2nd-degree introductions. Expect 90–120 days for a serious search.</p><p id="25059c70-168c-803a-882e-eff20ca5c937" class=""><strong>2. Behavioral Fit &gt; Resume Pedigree</strong></p><p id="25059c70-168c-80f1-a09c-d397a3ac60fb" class="">Ben Horowitz (What You Do Is Who You Are, 2019) stresses that “context kills even great talent.” Someone who led a 500-person org may crumble without support layers. Test for ability to thrive in ambiguity.</p><p id="25059c70-168c-800e-8908-c458c813754e" class=""><strong>3. Reference Triangulation</strong></p><p id="25059c70-168c-8094-9dd9-c21ddc8ecae0" class="">Run 6–8 deep references: at least two peers, two direct reports, and two managers. Ask for examples of both peak performance and failure recovery. Don’t accept “they were great” as an answer — press for specifics.</p><p id="25059c70-168c-8057-b705-d59ed24f04a7" class=""><strong>4. In-Loop Simulation</strong></p><p id="25059c70-168c-80b8-ae1c-cc37a1821ff7" class="">Assign a real problem: a go-to-market plan, org redesign, or customer pitch. Watch for clarity of thought, adaptability, and how they solicit input.</p><p id="25059c70-168c-80e0-b5fe-c8a79146d895" class=""><strong>5. Post-Hire 90-Day Charter</strong></p><p id="25059c70-168c-802b-b3d8-dbe21afcfda0" class="">Define outcomes before day one. Revisit at 30, 60, 90 days with both founder and board input. If the charter is materially off-track by 90 days, decide whether to reset or exit.</p><p id="25059c70-168c-80ff-9a94-f81cfa5f5a1c" class=""><strong>Execution Step:</strong> Treat exec hiring as a board-level process. Maintain parallel candidate slates to avoid single-option bias. Never make an offer without reference triangulation and an in-loop simulation.</p><hr id="25059c70-168c-80c9-8c8b-dc21cdcc277a"/><p id="25059c70-168c-807b-b695-ffafb3430df4" class=""><strong>Key Failure Patterns:</strong></p><ul id="25059c70-168c-8001-95aa-ec18a7c9a1b3" class="bulleted-list"><li style="list-style-type:disc">Writing JD task lists instead of outcome scorecards.</li></ul><ul id="25059c70-168c-801b-af7e-e0fe7fca0502" class="bulleted-list"><li style="list-style-type:disc">Over-relying on inbound applications—filters for availability, not excellence.</li></ul><ul id="25059c70-168c-8062-9a8c-f9a008c58cff" class="bulleted-list"><li style="list-style-type:disc">Letting untrained managers run interviews with no structure.</li></ul><ul id="25059c70-168c-80b5-b39f-cf981d4009ba" class="bulleted-list"><li style="list-style-type:disc">Treating closing as HR’s job instead of founder leadership.</li></ul><hr id="25059c70-168c-8081-a8e4-e73401612e38"/><h1 id="25059c70-168c-8030-8d81-e9bd1045b106" class=""><strong>6. Onboarding: Making New Hires Pay Off Fast</strong></h1><p id="25059c70-168c-80f2-99fa-f23bdb0329ff" class="">Hiring is only half the job. A great hire without a great onboarding process is like buying a race car and never putting fuel in it—you’ve got the potential, but you won’t see performance.</p><p id="25059c70-168c-80d9-b526-c6c218715d47" class="">The most dangerous assumption founders make is that “smart people will figure it out.” While true in the long term for A-players, the first 90 days are when they form their mental model of how the company operates, decide whether they made the right choice, and either accelerate into value or stall out.</p><hr id="25059c70-168c-8010-96f8-c7902e49882c"/><h2 id="25059c70-168c-80b2-9a07-d99b4da1631d" class="">6.1 30–60–90 Plans by Function</h2><p id="25059c70-168c-80d6-ab5f-ff3b9385161a" class="">QuantumLight recommends that every new hire, regardless of function, receives a <strong>30–60–90 plan</strong> that defines deliverables, learning goals, and relationship-building targets at each stage (QuantumLight Hiring Playbook, 2023).</p><p id="25059c70-168c-80af-9ba6-f719cef9b26b" class=""><strong>Example for a new Account Executive:</strong></p><ul id="25059c70-168c-800f-bdb8-c736cf085bf8" class="bulleted-list"><li style="list-style-type:disc"><strong>Day 0–30:</strong> Learn the product deeply, shadow 10+ sales calls, build pipeline of 10 qualified leads.</li></ul><ul id="25059c70-168c-80d2-ae5a-d0b9d62fb474" class="bulleted-list"><li style="list-style-type:disc"><strong>Day 31–60:</strong> Run first 5–7 calls independently, close 1–2 small deals, get certified in internal sales methodology.</li></ul><ul id="25059c70-168c-80e0-b2e2-d4a4b93cb1a7" class="bulleted-list"><li style="list-style-type:disc"><strong>Day 61–90:</strong> Hit 80%+ of ramp quota, mentor a newer AE on product pitch.</li></ul><p id="25059c70-168c-8097-81f4-d382ee2f53c0" class="">Netflix applies a similar principle but with more cultural weight: the first 90 days aren’t just about job performance—they’re about <strong>absorbing the “how”</strong> of decision-making at the company. New hires are paired with culture carriers (see 6.2) to model this.</p><p id="25059c70-168c-80af-a5ad-cc518d9f167e" class=""><strong>Execution step:</strong> For each role, pre-build a reusable 30–60–90 template. Customize per hire, but never start from zero.</p><hr id="25059c70-168c-8074-bf4f-fdaad9a1b210"/><h2 id="25059c70-168c-801b-a2b2-dea87189a35d" class="">6.2 Assigning Culture Carriers</h2><p id="25059c70-168c-8007-bbca-ec15bb7fd2d0" class="">A culture carrier is not necessarily a manager or the most senior person—they are employees who embody your values in action. Spotify’s onboarding playbook assigns a “buddy” from a different team to give context, connections, and candid answers to the unspoken rules (“How do decisions actually get made here?”) (Spotify HR Manifesto, 2019).</p><p id="25059c70-168c-8063-b3dc-f26b22a6f99c" class="">Index Ventures notes that this is especially important after ~30 employees, when new hires can no longer absorb culture by osmosis (Index Ventures, 2023).</p><p id="25059c70-168c-8032-9dc9-c66f1930c39f" class=""><strong>Execution step:</strong> Maintain a rotating roster of 5–10 culture carriers trained in onboarding support. Reward them in performance reviews for their impact on new hire ramp.</p><hr id="25059c70-168c-8023-8e09-cb704da16040"/><h2 id="25059c70-168c-80f5-bb19-ecfff5027b93" class="">6.3 Early Feedback Loops</h2><p id="25059c70-168c-809a-9c6e-d52e72bceff9" class="">The first mis-hires at scale often aren’t discovered until 6–12 months in—by which time damage is done. QuantumLight counters this with <strong>early check-ins</strong>:</p><ul id="25059c70-168c-802f-8a8a-c3c0cafa538f" class="bulleted-list"><li style="list-style-type:disc"><strong>Week 2:</strong> Confirm role clarity, early wins, and identify blockers.</li></ul><ul id="25059c70-168c-8036-ba8f-e21824e80341" class="bulleted-list"><li style="list-style-type:disc"><strong>Week 6:</strong> Assess progress toward 30-day goals, cultural integration, and team fit.</li></ul><ul id="25059c70-168c-80c4-b6fa-d1927c4efd7a" class="bulleted-list"><li style="list-style-type:disc"><strong>Week 12:</strong> Evaluate against 90-day deliverables; decide whether to confirm, coach, or exit.</li></ul><p id="25059c70-168c-808c-9041-f5e17eb2dba4" class="">Netflix’s Patty McCord advises radical transparency here: “If it’s not working, say it early, and say it plainly” (<em>Powerful</em>, 2018). Delaying hard conversations is more damaging in the first year than later in tenure.</p><p id="25059c70-168c-80e4-a842-de4cbda3f72d" class=""><strong>Execution step:</strong> Make 2-week and 6-week check-ins mandatory for all new hires, documented in the ATS or HRIS. Founders should personally review any “at risk” notes.</p><hr id="25059c70-168c-8036-b230-d56dc2a6be6d"/><h2 id="25059c70-168c-80ef-be0a-c8b9f2354e3a" class="">6.4 Scaling Onboarding Beyond 50 Employees</h2><p id="25059c70-168c-8072-bb3c-caac316e8877" class="">Once you’re hiring &gt;2–3 people per month, onboarding becomes a <strong>program</strong> rather than an ad-hoc manager task.</p><p id="25059c70-168c-80a3-a70a-f1875c6a994b" class="">Spotify’s scaled onboarding includes:</p><ul id="25059c70-168c-80aa-b95b-e220c3188233" class="bulleted-list"><li style="list-style-type:disc">A <strong>day one immersion</strong> into mission, values, and company history.</li></ul><ul id="25059c70-168c-80a3-a802-fbaa5454dae1" class="bulleted-list"><li style="list-style-type:disc">A <strong>functional bootcamp</strong>—role-specific training and certification.</li></ul><ul id="25059c70-168c-80c9-92f8-cd32e21da059" class="bulleted-list"><li style="list-style-type:disc">Social integration rituals—new hires present personal “user manuals” to their teams.</li></ul><p id="25059c70-168c-8047-8cda-c2e36f4aabb9" class="">QuantumLight advises moving to <strong>cohort onboarding</strong> at this stage: start dates are grouped (e.g., 1st and 15th of each month) so new hires form bonds and efficiency improves.</p><p id="25059c70-168c-80ae-b1a2-e98775798d92" class=""><strong>Execution step:</strong> Set a fixed onboarding cadence for all hires. Build a shared Notion or internal wiki with onboarding materials, updated quarterly.</p><hr id="25059c70-168c-80b2-8bb4-f3ccb0cd7d5e"/><h2 id="25059c70-168c-80b1-950c-c4265b12b8cf" class=""><strong>6.5 Geographic Expansion Hiring: First Country, First Remote Hub</strong></h2><p id="25059c70-168c-809d-916a-ec9fa48e9b8d" class="">Hiring your first people in a new market isn’t just a recruiting exercise — it’s a culture export challenge. If you get it wrong, you create a silo that drifts.</p><p id="25059c70-168c-805f-8455-ce19d2968426" class=""><strong>1. Market Recon Before Hiring</strong></p><p id="25059c70-168c-801a-bd5d-db0136d0f215" class="">Run a comp benchmark, review labor laws, and assess cultural norms for feedback, decision-making, and work pace. Airbnb’s early EU expansion paired market entry with a 90-day legal/compliance sprint before first hire.</p><p id="25059c70-168c-80f2-bd29-e27f22f9cec5" class=""><strong>2. Anchor Hire Strategy</strong></p><p id="25059c70-168c-8054-9ae0-fb8f322a6fad" class="">Your first hire must be a culture carrier <em>and</em> locally credible. They’ll translate HQ norms into local context. They should ideally spend their first 4–6 weeks embedded at HQ.</p><p id="25059c70-168c-808c-9bfd-c431a966b823" class=""><strong>3. Local vs. HQ Role Split</strong></p><p id="25059c70-168c-80c4-9ce8-fa2a6c3b9957" class="">Avoid “all sales” or “all ops” — a mixed-function first pod integrates faster with HQ. Andy Grove’s principle: structure drives behavior; if the local pod can’t collaborate cross-functionally from day one, it won’t later.</p><p id="25059c70-168c-8098-9fd5-d403ffc293fb" class=""><strong>4. HQ Integration Rituals</strong></p><p id="25059c70-168c-809f-b52c-f235278630d2" class="">Budget for multiple in-person cycles in year one. Slack and Zoom are insufficient for building trust.</p><p id="25059c70-168c-80e6-baa3-eede38e9b230" class=""><strong>Execution Step:</strong> Delay bulk hiring in new geographies until the anchor hire is fully ramped and culturally aligned. If the first hire is wrong, reset before adding headcount. </p><hr id="25059c70-168c-80b9-b4e6-f1cb7d6cadf3"/><p id="25059c70-168c-80ed-bbf0-c5f1775e30e1" class=""><strong>Key Failure Patterns:</strong></p><ul id="25059c70-168c-80b9-9511-f20c66d76556" class="bulleted-list"><li style="list-style-type:disc">Treating onboarding as “show them where the coffee machine is.”</li></ul><ul id="25059c70-168c-80e3-a97a-dd6709f80b92" class="bulleted-list"><li style="list-style-type:disc">Relying solely on managers to onboard without tools or training.</li></ul><ul id="25059c70-168c-80ff-a98b-d514bd01bf63" class="bulleted-list"><li style="list-style-type:disc">Skipping cultural integration in favor of pure functional ramp.</li></ul><ul id="25059c70-168c-80d8-974c-f7d8f989200d" class="bulleted-list"><li style="list-style-type:disc">Ignoring early warning signs and letting mis-hires linger.</li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
