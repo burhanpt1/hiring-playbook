@@ -39,6 +39,11 @@ def main():
 
     # Update manifest
     subprocess.check_call([sys.executable, str(ROOT / "scripts" / "update_manifest.py")])
+        # Update manifest
+    subprocess.check_call([sys.executable, str(ROOT / "scripts" / "update_manifest.py")])
+    # Build sections.json
+    subprocess.check_call([sys.executable, str(ROOT / "scripts" / "sectionize.py")])
+
 
     # Optional: set title
     if args.title:

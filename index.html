@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Playbook</title>
-  <link rel="preload" href="manifest.json" as="fetch" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
   <meta name="color-scheme" content="light dark">
 </head>
@@ -19,7 +18,19 @@
     </div>
   </header>
 
-  <div class="layout">
+  <!-- Landing page -->
+  <section id="landing" class="landing" hidden>
+    <div class="landing-inner">
+      <div class="landing-intro" id="landingIntro">
+        <h1>Scale, Hire, Train, Reflect</h1>
+        <p>Edit this intro in <code>index.html</code>. The four buttons route to the corresponding sections parsed from your export’s <code>&lt;h1&gt;</code> headings.</p>
+      </div>
+      <div class="landing-grid" id="landingGrid"></div>
+    </div>
+  </section>
+
+  <!-- Reader layout -->
+  <div class="layout" id="readerLayout" hidden>
     <aside class="sidebar">
       <nav id="toc" aria-label="Table of contents"></nav>
     </aside>
